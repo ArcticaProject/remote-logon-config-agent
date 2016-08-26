@@ -1,12 +1,13 @@
-thinclient-config-agent
-########################
+remote-logon-config-agent
+#########################
 
 Usage
 =====
 
-This is a commandline tool and Python library for retrieving a user's remote
-desktop configuration from uccs servers such as uccs.landscape.canonical.com.
-It is intended for programmatic use.
+This is a commandline tool and Python library for retrieving a user's
+remote desktop configuration from UCCS like servers as provided by  the
+Arctica Session Brokerage Service or the X2Go Session Broker. It is
+intended for programmatic use.
 
 It accepts a password via stdin and an email address as its sole argument.
 These must be valid credentials on the uccs server's SSO server, typically
@@ -14,7 +15,7 @@ login.canonical.com.
 
 Example usage::
 
-  echo test|./thinclient-config-agent mark
+  echo test|./remote-logon-config-agent mark
 
 Exit codes:
 
@@ -39,13 +40,13 @@ Errors are emitted as text on stderr and as JSON on stdout.
 Development
 ===========
 
-Coding style is PEP8.  Python 2.7 is the target version.
+Coding style is PEP8.  Python 3.4 is the target version.
 
 Running tests
 -------------
 Tests can be run using setup.py's test subcommand::
 
-  $ python setup.py test
+  $ python3 setup.py test
 
 Or by using the "check" makefile target::
 
@@ -89,8 +90,8 @@ certificates.
 Examples::
 
   # test against staging instance via http
-  echo test|SERVER_ROOT=http://91.189.93.90 ./thinclient-config-agent mark
+  echo test|SERVER_ROOT=http://91.189.93.90 ./remote-logon-config-agent mark
 
   # test against Canonistack instance via https
-  echo test|SERVER_ROOT=https://91.189.93.90 ./thinclient-config-agent mark\
+  echo test|SERVER_ROOT=https://91.189.93.90 ./remote-logon-config-agent mark\
   --skip-ssl-verify
