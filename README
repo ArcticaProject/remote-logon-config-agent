@@ -1,0 +1,96 @@
+thinclient-config-agent
+########################
+
+Usage
+=====
+
+This is a commandline tool and Python library for retrieving a user's remote
+desktop configuration from uccs servers such as uccs.landscape.canonical.com.
+It is intended for programmatic use.
+
+It accepts a password via stdin and an email address as its sole argument.
+These must be valid credentials on the uccs server's SSO server, typically
+login.canonical.com.
+
+Example usage::
+
+  echo test|./thinclient-config-agent mark
+
+Exit codes:
+
++------+------------------------------------+
+| code | Meaning                            |
++======+====================================+
+| 0    | Success                            |
++------+------------------------------------+
+| 1    | Usage error                        |
++------+------------------------------------+
+| 2    | Authentication error               |
++------+------------------------------------+
+| 3    | Connection error                   |
++------+------------------------------------+
+| 4    | SSL Certificate verification error |
++------+------------------------------------+
+| 100  | All other errors.                  |
++------+------------------------------------+
+
+Errors are emitted as text on stderr and as JSON on stdout.
+
+Development
+===========
+
+Coding style is PEP8.  Python 2.7 is the target version.
+
+Running tests
+-------------
+Tests can be run using setup.py's test subcommand::
+
+  $ python setup.py test
+
+Or by using the "check" makefile target::
+
+  $ make check
+
+Lint
+----
+The "lint" makefile target should be used::
+
+  $ make lint
+
+Landing code
+------------
+
+Merges are manual on this branch, because using Tarmac would interfere with
+packaging work.
+
+1. Merge into a local copy of lp:~maza-lib.
+2. Resolve conflicts if needed.
+3. Run "make check".
+4. Run "make lint".
+5. If lint or tests are not clean, merge lp:~maza-lib into feature branch, fix
+   and return to step 1.
+6. Commit.
+7. Push local copy to lp:~maza-lib.
+
+
+Testing and debugging options
+-----------------------------
+Server can be overridden with the SERVER_ROOT environment variable, which must
+specify the root URL of a server supporting the uccs API.
+
+The API version can be specified with the API_VERSION environment variable.  It
+is typically an integer.  The string "default" will select the current default
+API version, but unsetting API_VERSION will also do that.
+
+SSL server certificate verification can be disabled with the --skip-ssl-verify
+option.  This can be useful for testing against servers with self-signed
+certificates.
+
+Examples::
+
+  # test against staging instance via http
+  echo test|SERVER_ROOT=http://91.189.93.90 ./thinclient-config-agent mark
+
+  # test against Canonistack instance via https
+  echo test|SERVER_ROOT=https://91.189.93.90 ./thinclient-config-agent mark\
+  --skip-ssl-verify
