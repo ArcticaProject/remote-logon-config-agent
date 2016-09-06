@@ -1,0 +1,21 @@
+Source: remote-logon-config-agent
+Maintainer:  Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
+Section: utils
+Priority: extra
+Build-Depends: debhelper (>= 9),
+               python3-all,
+               python3-pycurl,
+               python3-setuptools
+Standards-Version: 3.9.8
+X-Python3-Version: >= 3.2
+Vcs-Git: git://cgit.arctica-project.org/remote-logon-service.git
+Vcs-Browser: https://cgit.arctica-project.org/remote-logon-service.git/
+
+Package: remote-logon-config-agent
+Architecture: all
+Depends: ${misc:Depends},
+         ${python3:Depends},
+         python3-pycurl,
+Description: Retrieve the list of remote desktop servers for a user.
+ Retrieve the list of remote desktop servers for a user from a master server
+ like Arctica Server (with Brokerage support) or X2Go Session Broker.

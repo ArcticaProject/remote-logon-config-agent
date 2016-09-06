@@ -1,0 +1,64 @@
+remote-logon-config-agent (0.9) UNRELEASED; urgency=low
+
+  * Fork from Ubuntu's thin-client-config-agent and rename to
+    remote-logon-config-agent.
+
+ -- Mike Gabriel <mike.gabriel@das-netzwerkteam.de>  Thu, 26 Aug 2016 15:24:06 +0200
+
+thin-client-config-agent (0.8) trusty; urgency=low
+
+  * Add python3-pycurl dependency. (LP: #1187450)
+
+ -- Dmitrijs Ledkovs <xnox@ubuntu.com>  Tue, 05 Nov 2013 23:55:06 +0000
+
+thin-client-config-agent (0.7) raring; urgency=low
+
+  [ Dmitrijs Ledkovs ]
+  * Port to use BytesIO with raring's pycurl. (LP: #1152222)
+  * Bump Standards Version to 3.9.4.
+
+  [ David Barth]
+  * Fix test suite for above.
+  
+ -- Dmitrijs Ledkovs <dmitrij.ledkov@ubuntu.com>  Wed, 03 Apr 2013 17:22:33 +0100
+
+thin-client-config-agent (0.6) quantal; urgency=low
+
+  * debian/control:
+    - Update Vcs-Bzr link to point to new ~ubuntu-core-dev trunk
+  * Port to Python 3
+
+ -- Michael Terry <mterry@ubuntu.com>  Wed, 15 Aug 2012 21:46:51 -0400
+
+thin-client-config-agent (0.5) quantal; urgency=low
+
+  * Package for Ubuntu (LP: #1037228)
+  * Switch to dh9 over dh7
+  * Cleanup control and copyright files
+
+ -- Michael Terry <mterry@ubuntu.com>  Tue, 14 Aug 2012 16:02:35 -0400
+
+thin-client-config-agent (0.4) precise; urgency=low
+
+  * Fixes the error messages getting from this to the greeter (LP: #1005961) 
+
+ -- Matthew Fischer <matthew.fischer@canonical.com>  Wed, 30 May 2012 07:45:57 -0600
+
+thin-client-config-agent (0.3) precise; urgency=low
+
+  * Use PycURL to retrieve URLs so that SSL certificates are verified
+  * debian/control: update dependencies
+
+ -- Alex Chiang <achiang@canonical.com>  Thu, 24 May 2012 14:08:11 -0600
+
+thin-client-config-agent (0.2) precise; urgency=low
+
+  * Remove call to mlockall, as it's not needed (LP: #1002957)
+
+ -- Alex Chiang <achiang@canonical.com>  Wed, 23 May 2012 15:38:02 -0600
+
+thin-client-config-agent (0.1) precise; urgency=low
+
+  * Initial release.
+
+ -- Alex Chiang <achiang@canonical.com>  Tue, 22 May 2012 12:44:15 -0600
