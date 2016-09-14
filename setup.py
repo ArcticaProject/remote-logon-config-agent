@@ -9,6 +9,6 @@ setup(
     license='GPL',
     description='Retrieve the list of remote desktop servers for a user.',
     long_description='Retrieve the list of remote desktop servers for a user.',
-    packages=['tccalib'],
-    test_suite='tccalib',
+    packages=['rscalib'],
+    test_suite='rscalib',
 )

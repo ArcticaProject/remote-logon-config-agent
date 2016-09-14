@@ -12,7 +12,7 @@ import base64
 import pycurl
 from io import BytesIO
 
-from tccalib import (
+from rscalib import (
     CertificateVerificationFailed,
     CouldNotConnect,
     GetMazaData,
