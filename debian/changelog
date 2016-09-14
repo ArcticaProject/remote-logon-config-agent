@@ -1,4 +1,4 @@
-remote-logon-config-agent (0.9) UNRELEASED; urgency=low
+remote-logon-config-agent (0.9-0) UNRELEASED; urgency=low
 
   * Fork from Ubuntu's thin-client-config-agent and rename to
     remote-logon-config-agent.
