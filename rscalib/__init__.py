@@ -14,7 +14,6 @@ import base64
 
 import pycurl
 
-
 class UserError(Exception):
     """An error message that should be presented to the user."""
 
@@ -131,8 +130,12 @@ class PycURLGetter:
             header_ = ''.join(lines[1:])
             headers = parse_headers(BytesIO(header_.encode('ascii')))
             raise urllib.error.HTTPError(
-                self.curl.getinfo(pycurl.EFFECTIVE_URL), status,
-                self.result.getvalue(), headers, None)
+                self.curl.getinfo(pycurl.EFFECTIVE_URL),
+                code=status,
+                msg=self.result.getvalue(),
+                hdrs=headers,
+                fp=StringIO()
+            )
 
 
 class GetMazaData:
