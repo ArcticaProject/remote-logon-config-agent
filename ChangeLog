@@ -1,0 +1,40 @@
+2017-04-29 22:43:47 +0200 Mike Gabriel (d02a34a)
+
+	* release 0.9 (HEAD -> master)
+
+2016-09-14 14:25:56 +0200 Mike Gabriel (1fe0e9c)
+
+	* debian/changelog: Add -0 to the package version. (origin/master)
+
+2016-09-14 14:21:04 +0200 Mike Gabriel (f0bde60)
+
+	* rename thinclient-config-agent to remote-logon-config-agent
+
+2016-09-14 14:20:53 +0200 Mike Gabriel (e4046a0)
+
+	* debian/changelog: Fix date in latest stanza.
+
+2016-09-14 14:09:13 +0200 Mike Gabriel (54e001e)
+
+	* rscalib/__init__.py: Don't set fp to None when raising an
+          HTTPError, use io.StringIO() object instead.
+
+2016-09-14 14:10:54 +0200 Mike Gabriel (ca3bc5e)
+
+	* Rename module tccalib to rscalib.
+
+2016-09-06 10:28:32 +0200 Mike Gabriel (254c1b8)
+
+	* debian/*: (Re-)add packaging folder for .deb packages.
+
+2016-08-26 15:20:38 +0200 Mike Gabriel (1a13704)
+
+	* rename thin(-|)client-config-agent script to
+          remote-logon-config-agent (as it is a helper tool for the
+          remote-logon-service utilized by Arctica Greeter
+
+2016-08-26 15:09:51 +0200 Mike Gabriel (7ed834d)
+
+	* Fork Canonical's thin-client-config-agent script and maintain it in
+          the Arctica Project's namespace.
+
