@@ -1,13 +1,17 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: remote-logon-config-agent
+Upstream-Contact: Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
 Source: https://github.com/ArcticaProject/remote-logon-config-agent
 
 Files: *
-Copyright: 2012 Canonical Ltd.
+Copyright:
+  2012 Canonical Ltd.
 License: GPL-3
 
 Files: debian/*
-Copyright: 2012 Canonical Ltd.
+Copyright:
+  2012 Canonical Ltd.
+  2017, Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
 License: GPL-3
 
 License: GPL-3

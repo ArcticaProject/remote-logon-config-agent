@@ -25,3 +25,6 @@ override_dh_auto_install:
 	set -ex ; for python in $(PY3VERS) ; do \
 		$$python setup.py install --root=$(CURDIR)/debian/remote-logon-config-agent --install-layout=deb; \
 	done
+
+get-orig-source:
+	uscan --noconf --force-download --rename --download-current-version --destdir=..

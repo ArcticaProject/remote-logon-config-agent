@@ -16,6 +16,21 @@ Architecture: all
 Depends: ${misc:Depends},
          ${python3:Depends},
          python3-pycurl,
-Description: Retrieve the list of remote desktop servers for a user.
- Retrieve the list of remote desktop servers for a user from a master server
- like Arctica Server (with Brokerage support) or X2Go Session Broker.
+Description: Retrieve host and session information from remote broker servers
+ This tiny Python tool is part of the Arctica Greeter display manager.
+ .
+ The remote-logon-config-agent fetches JSON based remote server
+ information from a brokerage host (formerly known as UCCS, a service run
+ by Canonical Ltd. around 2012-2014).
+ .
+ This tool gets used by the DBus service 'remote-logon-service'. The
+ retrieved information is then handed over by the DBus service to Arctica
+ Greeter.
+ .
+ The retrieved information can be obtained from a remote desktop
+ brokerage service like Arctica Server (with brokerage support) or from
+ the X2Go Session Broker.
+ .
+ In Arctica Greeter, the logon information is presented to the user for
+ starting up remote desktop sessions on Arctica, X2Go or RDP / Citrix
+ servers.
