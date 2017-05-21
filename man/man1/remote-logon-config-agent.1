@@ -1,0 +1,54 @@
+'\" -*- coding: utf-8 -*-
+.if \n(.g .ds T< \\FC
+.if \n(.g .ds T> \\F[\n[.fam]]
+.de URL
+\\$2 \(la\\$1\(ra\\$3
+..
+.if \n(.g .mso www.tmac
+.TH remote-logon-config-agent 1 "May 2017" "Version 0.9" "Arctica Greeter"
+.SH NAME
+remote-logon-config-agent \- Retrieve JSON based remote logon information
+.SH SYNOPSIS
+'nh
+.fi
+.ad l
+\fBremote-logon-config-agent\fR \kx
+.if (\nx>(\n(.l/2)) .nr x (\n(.l/5)
+'in \n(.iu+\nxu
+[
+\fIoptions\fR
+]
+'in \n(.iu-\nxu
+.ad b
+'hy
+.SH DESCRIPTION
+
+\fBremote-logon-config-agent\fR is a tiny tool for retrieving JSON-based
+remote logon information from broker servers (like, e.g., X2Go Session
+Broker, Arctica Server) and handing that over to the DBus service
+\fBremote-logon-service\fR.
+
+.PP
+
+The \fBremote-logon-config-agent\fR and the \fBremote-logon-service\fR
+both are components of Arctica Greeter, facilitating user logins into
+session running on remote machines.
+
+.PP
+
+Here is a short example for retrieving session information from the X2Go
+Session Broker (make sure the broker has UCCS frontend support enabled:
+
+.PP
+  $ SERVER_ROOT=http://x2gobroker.localdomain:8080/uccs/inifile/
+  $ export SERVER_ROOT
+  $ echo <mypassword> | thin-client-config-agent <myuserid>
+
+.SH "SEE ALSO"
+remote-logon-serivice (1), arctica-greeter (1)
+
+.SH AUTHOR
+
+This manual has been written for the Arctica Project
+(http://arctica-project.org) by Mike Gabriel
+<mike.gabriel@das-netzwerkteam.de>
