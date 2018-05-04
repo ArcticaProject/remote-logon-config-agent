@@ -128,7 +128,7 @@ class TestGetMazaDataAPI5(TestCase):
         credentials = base64.encodebytes(b'foo:bar').decode('ascii')
         expected = 'Basic %s' % credentials
         self.assertEqual('GET', request.get_method())
-        self.assertEqual('https://uccs.landscape.canonical.com/api/4/',
+        self.assertEqual('https://uccs.landscape.canonical.com/api/5/',
                          request.get_full_url())
         self.assertEqual(expected, request.headers['Authorization'])
 
