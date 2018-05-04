@@ -20,6 +20,7 @@ from rscalib import (
     GetMazaDataAPI2,
     GetMazaDataAPI3,
     GetMazaDataAPI4,
+    GetMazaDataAPI5,
     PycURLGetter,
     Unauthorized,
     )
@@ -109,6 +110,20 @@ class TestGetMazaDataAPI4(TestCase):
     def test_make_request(self):
         """v4 requests have correct URL and Auth header."""
         getter = GetMazaDataAPI4('foo', 'bar')
+        request =  getter.make_request()
+        credentials = base64.encodebytes(b'foo:bar').decode('ascii')
+        expected = 'Basic %s' % credentials
+        self.assertEqual('GET', request.get_method())
+        self.assertEqual('https://uccs.landscape.canonical.com/api/4/',
+                         request.get_full_url())
+        self.assertEqual(expected, request.headers['Authorization'])
+
+
+class TestGetMazaDataAPI5(TestCase):
+
+    def test_make_request(self):
+        """v5 requests have correct URL and Auth header."""
+        getter = GetMazaDataAPI5('foo', 'bar')
         request =  getter.make_request()
         credentials = base64.encodebytes(b'foo:bar').decode('ascii')
         expected = 'Basic %s' % credentials
