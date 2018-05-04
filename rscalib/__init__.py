@@ -187,16 +187,9 @@ class GetMazaDataAPI1(GetMazaData):
         return urllib.request.Request(self.get_api_url() + path)
 
 
-class GetMazaDataAPI5(GetMazaDataAPI4):
-    """Get the maza data for a given username/email and password via API v5."""
-
-    # identical for now with API v4 regarding the URL request part.
+class GetMazaDataAPI5(GetMazaData):
+    """Get the maza data for a given email and password via API v5."""
     api_version = 5
-
-
-class GetMazaDataAPI4(GetMazaData):
-    """Get the maza data for a given email and password via API v4."""
-    api_version = 4
 
     def get_url(self):
         return self.get_api_url()
@@ -208,6 +201,13 @@ class GetMazaDataAPI4(GetMazaData):
         authorization = 'Basic %s' % credentials64.decode('ascii')
         request.add_header('Authorization', authorization)
         return request
+
+
+class GetMazaDataAPI4(GetMazaDataAPI5):
+    """Get the maza data for a given username/email and password via API v4."""
+
+    # identical for now with API v4 regarding the URL request part.
+    api_version = 4
 
 
 class GetMazaDataAPI3(GetMazaDataAPI4):
