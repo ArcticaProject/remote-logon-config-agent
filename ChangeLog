@@ -1,10 +1,35 @@
-2017-04-29 22:43:47 +0200 Mike Gabriel (d02a34a)
+2018-05-07 16:23:25 +0200 Mike Gabriel (e9a82ff)
 
-	* release 0.9 (HEAD -> master)
+	* release 0.10 (HEAD -> master, tag: 0.10)
+
+2018-05-04 12:15:47 +0200 Mike Gabriel (34487ae)
+
+	* API v5: Fix URL in TestGetMazaDataAPI5.
+
+2018-05-04 12:13:21 +0200 Mike Gabriel (4a08823)
+
+	* rscalib/__init__.py: Switch API v4 and API v5 definitions around.
+
+2018-05-04 10:59:43 +0200 Mike Gabriel (60b5b46)
+
+	* API v5: Start work on API v5.
+
+2017-05-21 22:52:25 +0200 Mike Gabriel (2946fc3)
+
+	* debian/*: Adopt various packaging changes from official Debian
+          package.
+
+2017-05-21 22:27:55 +0200 Mike Gabriel (fbcc883)
+
+	* man page: Provide man page for remote-logon-config-agent.
+
+2017-04-29 22:43:47 +0200 Mike Gabriel (8952f8c)
+
+	* release 0.9 (tag: 0.9)
 
 2016-09-14 14:25:56 +0200 Mike Gabriel (1fe0e9c)
 
-	* debian/changelog: Add -0 to the package version. (origin/master)
+	* debian/changelog: Add -0 to the package version.
 
 2016-09-14 14:21:04 +0200 Mike Gabriel (f0bde60)
 
