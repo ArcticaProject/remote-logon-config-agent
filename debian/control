@@ -3,6 +3,7 @@ Maintainer:  Mike Gabriel <mike.gabriel@das-netzwerkteam.de>
 Section: utils
 Priority: extra
 Build-Depends: debhelper (>= 10),
+               dh-python,
                python3-all,
                python3-pycurl,
                python3-setuptools
